@@ -1,0 +1,235 @@
+body{
+    background-color: #25204D;
+}
+.tree{
+    text-align: center;
+    font-size: 40px;
+    color: #2E8B57;
+    position: relative;
+}
+h1{
+    text-align: center;
+    font-family: "Yu Mincho","MS Micho",serif;
+    font-size: 48px;
+    color: #F7E7B4;
+    font-weight: normal;
+}
+h1 span{
+    font-size: 22px;
+}
+.snow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.snowflake{
+    position: absolute;
+    top: -30px;
+    color: white;
+    animation: snowfall 10s linear infinite;
+}
+@keyframes snowfall{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(110vh);
+    }
+}
+.yarn-ball{
+    background: none;
+    boder: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+.tree-image{
+    width: 450px;
+    max-width: 90%;
+    height: auto;
+}
+.ball1{
+    top: 20%;
+    left: 45%;
+}
+.ball2{
+    top:35%;
+    left: 53%;
+}
+.ball3{
+    top: 55%;
+    left: 46%;
+}
+.ball4{
+    top: 63%;
+    left: 53%;
+}
+.ball5{
+    top: 68%;
+    left: 41%;
+}
+#guide{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #45ff6e;
+    font-size: 18px;
+}
+#santa{
+    display: none;
+    position: absolute;
+    width: 250px;
+    top: 45%;
+    left: 80%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+#santa{
+    cursor: pointer;
+    animation: santa-run 0.8s linear infinite alternate;
+}
+@keyframes santa-run{
+    0%{
+        left: 15%;
+    }
+    100%{
+        left: 85%;
+    }
+}
+#santa.caught{
+    animation: santa-grow 1.5s ease-in forwards !important;
+    pointer-events: none;
+    z-index: 10001;
+    animation-name: santa-grow !important;
+}
+@keyframes santa-grow{
+    0%{
+        transform: translateX(-50%) scale(1);
+    }
+    100%{
+        left: 50%;
+        top: 40%;
+        transform: translateX(-50%) scale(5);
+    }
+}
+#santa{
+    pointer-events: auto;
+    z-index: 9999;
+}
+#house-screen{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #30254f;
+    z-index: 10000;
+}
+#house{
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#drag-santa{
+    position: absolute;
+    width: 150px;
+    left: 15%;
+    bottom: 15%;
+    cursor: grab;
+    z-index: 10001;
+    touch-action: none;
+}
+@keyframes houseShake{
+    0%{transform: translate(-50%,-50%) rotate(0deg);}
+    25%{transform: translate(-50%,-50%) rotate(5deg);}
+    50%{transform: translate(-50%,-50%) rotate(-5deg);}
+    75%{transform: translate(-50%,-50%) rotate(5deg);}
+    100%{transform: translate(-50%,-50%) rotate(0deg);}
+}
+.shaking{
+    animation: houseShake 0.4s ease-in-out 4;
+}
+#room-screen{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #30254f;
+    z-index: 20000;
+}
+#drag-guide{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ffd700;
+    z-index: 10001;
+    pointer-events: none;
+}
+#room-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+#present{
+    position: absolute;
+    width: 150px;
+    left: 15%;
+    bottom: 15%;
+    cursor: grab;
+    z-index: 2;
+    touch-action: none;
+}
+#teddy{
+    display: none;
+    position: absolute;
+    width: 130px;
+    left: 59%;
+    bottom: 5%;
+    cursor: pointer;
+    z-index: 3;
+}
+#letter{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+    background: #fff5fa;
+    z-index: 100;
+}
+#room-guide{
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ff66b3,0 0 18px #ffd700;
+    background: rgba(255,182,230,0.35);
+    padding: 12px 24px;
+    border: 3px solid #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 0 12px rgba(255,215,0,0.6);
+    z-index: 10;
+    white-space: nowrap;
+}
